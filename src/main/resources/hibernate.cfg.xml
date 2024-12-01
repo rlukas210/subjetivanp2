@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuração do Banco de Dados -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/np2</property>
+        <property name="hibernate.connection.username">lukas</property>
+        <property name="hibernate.connection.password">101220</property>
+
+        <!-- Dialeto do Hibernate -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Gerenciamento de Schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Exibir SQL no console (opcional) -->
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">false</property>
+
+        <!-- Desabilitar logs detalhados do Hibernate -->
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">false</property>
+        <property name="hibernate.use_sql_comments">false</property>
+
+        <!-- Definir o nível de log para ERROR -->
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.c3p0.max_size">10</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+
+        <!-- Definindo log de erro apenas -->
+        <property name="hibernate.log.level">ERROR</property>
+
+        <!-- Mapeamento das Entidades -->
+        <mapping class="com.poo.locadora.entities.Cliente"/>
+        <mapping class="com.poo.locadora.entities.Veiculo"/>
+        <mapping class="com.poo.locadora.entities.Locacao"/>
+
+
+    </session-factory>
+</hibernate-configuration>
